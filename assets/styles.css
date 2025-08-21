@@ -1,0 +1,316 @@
+
+:root{
+  --ink:#0a1f16;
+  --muted:#486a59;
+  --bg:#f5fbf7;
+  --card:#ffffff;
+  --brand:#0b4f36;
+  --accent:#22c55e;
+  --accent-2:#16a34a;
+  --radius:16px;
+  --edge:#d9efe3;
+  --shadow:0 10px 26px rgba(11,79,54,.10);
+  --shadow-2:0 14px 40px rgba(11,79,54,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:0;background:rgba(255,255,255,.9);border-bottom:1px solid var(--edge);z-index:10;backdrop-filter:saturate(140%) blur(6px)}
+.nav .bar{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:14px 0}
+.brand{display:flex;gap:10px;align-items:center;color:var(--brand);font-weight:800}
+.brand img{height:44px;width:auto}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap}
+.navlinks a{color:var(--ink);padding:8px 10px;border-radius:10px;transition:background .25s ease, transform .25s ease}
+.navlinks a:hover{background:#e8f6ed;text-decoration:none;transform:translateY(-1px)}
+.cta{background:var(--brand);color:#fff !important;border-radius:10px;padding:10px 14px;font-weight:700}
+.hero{
+  background:radial-gradient(1200px 400px at 20% -5%, #e6f7ec, transparent 70%),
+             radial-gradient(700px 300px at 90% 10%, #f4fff7, transparent 70%),
+             linear-gradient(180deg,#fff, #f7fdfa);
+  border-bottom:1px solid var(--edge);
+}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;padding:52px 0;align-items:center}
+.hero h1{font-size:clamp(28px,4vw,48px);line-height:1.1;margin:0;color:var(--brand)}
+.hero p.lead{font-size:clamp(16px,2vw,20px);color:var(--muted);margin:12px 0 18px}
+.hero .card{background:var(--card);border:1px solid var(--edge);box-shadow:var(--shadow);border-radius:var(--radius);padding:18px}
+.kicker{letter-spacing:.14em;text-transform:uppercase;color:#16a34a;font-weight:800;font-size:.88rem}
+.btn{display:inline-block;background:var(--accent);color:#fff;border-radius:12px;padding:12px 16px;font-weight:700;transition:transform .2s ease, box-shadow .2s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+.counters{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:10px}
+.counter{background:var(--card);border:1px solid var(--edge);border-radius:var(--radius);padding:14px;text-align:center;box-shadow:var(--shadow)}
+.counter .n{font-size:28px;font-weight:800;color:var(--brand)}
+.counter .l{color:var(--muted);font-size:14px}
+.section{padding:42px 0}
+h2{font-size:clamp(22px,2.8vw,34px);margin:0 0 10px;color:var(--brand)}
+.grid{display:grid;gap:18px}
+.cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--edge);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);transition:transform .25s ease, box-shadow .25s ease}
+.card:hover{transform:translateY(-4px) scale(1.01);box-shadow:var(--shadow-2)}
+.badge{display:inline-block;background:#e6f6ec;color:#0f5132;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease, transform .7s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+.imgcard{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--edge);box-shadow:var(--shadow);background:#fff}
+.imgcard img{display:block;width:100%;height:auto;transform:scale(1.03) translateY(4px);transition:transform .6s ease, filter .6s ease}
+.imgcard:hover img{transform:scale(1.06) translateY(0);filter:saturate(112%)}
+.imgcap{position:absolute;left:12px;bottom:12px;background:rgba(11,79,54,.7);color:#fff;padding:8px 10px;border-radius:10px;font-weight:700}
+.testi{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.quote{background:#fff;border:1px solid var(--edge);border-left:4px solid #86efac;border-radius:10px;padding:16px}
+.clientgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.clientgrid img{width:100%;height:auto;border:1px solid var(--edge);border-radius:10px;background:#f1fbf5}
+footer{background:#0a1f16;color:#cfead8;margin-top:28px}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;padding:28px 0}
+footer a{color:#86efac}
+small, .muted{color:#638f79}
+footer .brand img{height:60px}
+@media (max-width:960px){
+  .hero .wrap{grid-template-columns:1fr}
+  .counters{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .testi{grid-template-columns:1fr}
+  .clientgrid{grid-template-columns:repeat(2,1fr)}
+  footer .wrap{grid-template-columns:1fr}
+}
+
+.nav .brand {
+  font-size: 1.8rem;   /* bigger text for the brand link */
+  font-weight: 700;
+}
+
+.nav .brand img {
+  height: 60px;        /* double if it was ~40px before */
+  vertical-align: middle;
+  margin-right: 8px;   /* space between logo and text */
+}
+
+/* --- Mobile improvements for better readability --- */
+@media (max-width: 900px){
+  .hero .wrap { display:block !important; }
+  .grid.cards, .gallery-3, .products-grid, .oilgas-grid, .industries-grid, .about-grid, .contact-grid {
+    display:grid; grid-template-columns:1fr !important; gap:14px !important;
+  }
+  .imgcard img { width:100%; height:auto; display:block; }
+  .container { padding-left:16px; padding-right:16px; }
+  .card { padding:16px; }
+  h1 { font-size:1.6rem; line-height:1.2; }
+  .lead { font-size:1rem; }
+  .btn { padding:10px 14px; border-radius:10px; }
+}
+
+
+/* === Animations === */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; will-change: opacity, transform; }
+.reveal.in { opacity: 1; transform: none; }
+.heroimg img { transform: scale(1.02); transition: transform 1.2s ease; }
+.heroimg.in img { transform: scale(1); }
+
+
+/* === Mobile header polish === */
+@media (max-width: 900px){
+  .nav .bar { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+  .nav .brand { display:flex; align-items:center; gap:8px; white-space: nowrap; font-size: 1.05rem; font-weight: 700; }
+  .nav .brand img { height: 28px; width: auto; }
+  .menu-btn { display:block; font-size:1.4rem; background:none; border:none; padding:6px 8px; }
+  .navlinks { display:none; flex-direction:column; gap:10px; padding:10px 0 6px; }
+  .nav.open .navlinks { display:flex; }
+  /* tighten hero typography on phones */
+  h1 { font-size: 1.5rem; line-height: 1.2; }
+  .lead { font-size: 1rem; }
+}
+
+/* Desktop keeps previous layout */
+@media (min-width: 901px){
+  .menu-btn { display:none; }
+}
+
+
+/* === Mobile nav always visible (stacked) === */
+@media (max-width: 900px){
+  .nav .bar{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .nav .brand{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:1.05rem;font-weight:700}
+  .nav .brand img{height:28px;width:auto}
+  /* Make links visible by default (no toggle needed) */
+  .nav .navlinks{display:flex !important;flex-direction:column;gap:10px;padding:10px 0 6px}
+  .menu-btn{display:none}
+}
+
+/* === About page grid on desktop: text left, image right === */
+@media (min-width: 901px){
+  .about-grid{display:grid;grid-template-columns:1.25fr 0.9fr;gap:18px;align-items:start}
+  .about-grid .imgcard img{width:100%;height:auto;display:block}
+}
+
+/* === Factory image animation (landing) === */
+.heroimg { position: relative; overflow: hidden; border-radius: 16px; }
+.heroimg img { transform: scale(1.03); transition: transform 1.2s ease, filter 1.2s ease; filter: saturate(0.95) contrast(1.02); }
+.heroimg.in img { transform: scale(1); filter: saturate(1) contrast(1.04); }
+@keyframes subtleFloat { 0%{transform:translateY(0)} 50%{transform:translateY(-6px)} 100%{transform:translateY(0)} }
+.heroimg.in img { animation: subtleFloat 6s ease-in-out 1.5s infinite; }
+
+/* === Contact map: shorter on desktop === */
+@media (min-width: 901px){
+  .map-embed{padding-bottom:10% !important;}
+}
+
+
+/* Mobile header: brand on first line, nav links stacked on second */
+@media (max-width: 900px){
+  .nav .bar{flex-direction:column;align-items:flex-start}
+  .nav .brand{width:100%;margin-bottom:6px;justify-content:flex-start;font-size:1.05rem;font-weight:700;display:flex;align-items:center;gap:8px}
+  .nav .navlinks{width:100%;display:flex !important;flex-wrap:wrap;gap:10px;justify-content:flex-start}
+}
+
+/* --- Contact grid responsive layout --- */
+@media (min-width: 901px){
+  .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:20px;align-items:start}
+}
+@media (max-width: 900px){
+  .contact-grid{display:block}
+}
+
+/* --- Mobile nav links inline --- */
+@media (max-width: 900px){
+  .nav .navlinks{display:flex !important;flex-direction:row;flex-wrap:wrap;gap:12px;justify-content:flex-start}
+  .nav .navlinks a{display:inline-block;width:auto !important;padding:6px 0}
+}
+
+
+/* === Header compact & single-line tweaks === */
+.nav .bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:nowrap;
+}
+.nav .brand{
+  display:flex; align-items:center; gap:8px;
+  white-space:nowrap;
+  font-size:1.6rem; line-height:1.1;
+  flex:0 1 auto; min-width:0;
+}
+.nav .brand img{ height:34px; width:auto; }
+.nav .navlinks{ display:flex; gap:16px; flex-wrap:nowrap; white-space:nowrap; align-items:center; min-width:0; }
+.nav .navlinks a{ white-space:nowrap; }
+@media (max-width:1100px){
+  .nav .brand{ font-size:1.4rem; }
+  .nav .brand img{ height:30px; }
+  .nav .navlinks{ gap:12px; }
+  .nav .navlinks a{ font-size:.98rem; }
+}
+@media (max-width:860px){
+  .nav .navlinks{ overflow-x:auto; scrollbar-width:none; }
+  .nav .navlinks::-webkit-scrollbar{ display:none; }
+}
+
+
+
+/* ===== Mobile-only polish (<= 600px) ===== */
+@media (max-width: 600px){
+  /* Global safe gutters so content isn't flush with the edges */
+  .container{ padding-left:16px; padding-right:16px; }
+  header .container, footer .container{ padding-left:16px; padding-right:16px; }
+  .section .container{ padding-left:16px; padding-right:16px; }
+  
+  /* Header: keep brand/text inside screen */
+  .nav .bar{ gap:12px; }
+  .nav .brand{
+    font-size:1.15rem;           /* smaller brand on phones */
+    line-height:1.1;
+    white-space:nowrap;
+  }
+  .nav .brand img{ height:26px; }
+  .nav .navlinks{
+    gap:10px;
+    white-space:nowrap;
+    overflow-x:auto;             /* allow gentle horizontal scroll if needed */
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .nav .navlinks::-webkit-scrollbar{ display:none; }
+  .nav .navlinks a{ font-size:0.95rem; }
+  
+  /* Hero and sections: breathing room */
+  .hero .container{ padding-top:16px; }
+  .hero h1{ font-size:2rem; line-height:1.2; }
+  .hero .lead{ font-size:1rem; }
+  
+  /* Footer spacing so text doesn't touch edges */
+  footer{ padding-left:0; padding-right:0; }
+  footer .wrap{ gap:16px; }
+  footer .container{ padding-top:16px; padding-bottom:16px; }
+}
+
+
+
+/* ===== Global horizontal gutters (desktop + mobile) ===== */
+.container,
+header .container,
+.section .container,
+footer .container {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (max-width: 600px){
+  .container,
+  header .container,
+  .section .container,
+  footer .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+
+/* === Global horizontal gutters (desktop + mobile, v24) === */
+.container,
+header .container,
+.section .container,
+.hero .container,
+footer .container {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Desktop header logo size */
+.nav .brand img {
+  height: 40px;
+  width: auto;
+}
+
+@media (max-width: 600px){
+  .container,
+  header .container,
+  .section .container,
+  .hero .container,
+  footer .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Mobile header logo slightly smaller but visible */
+  .nav .brand img {
+    height: 32px;
+  }
+}
+
+
+
+/* === v25: Force header (.nav) gutters + logo sizing with higher specificity === */
+.nav { padding-left: 24px; padding-right: 24px; }                /* desktop/header gutters */
+.nav .container { padding-left: 0; padding-right: 0; }           /* avoid double padding */
+
+.nav .brand img { height: 44px !important; width: auto; }        /* larger desktop logo */
+.nav .brand { gap: 10px; }                                       /* little more breathing room */
+
+@media (max-width: 600px){
+  .nav { padding-left: 16px; padding-right: 16px; }              /* mobile/header gutters */
+  .nav .brand img { height: 34px !important; }                   /* larger than previous mobile */
+  .nav .brand { font-size: 1.2rem; }                             /* keep brand readable */
+  .nav .navlinks { gap: 12px; }                                  /* links spacing ok */
+}
